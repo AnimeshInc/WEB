@@ -1,0 +1,103 @@
+﻿<!doctype html>
+
+<html>
+<head>
+	<title>Раскрывающейся списка</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		ul.expandable li { list-style-image: url('img/point.gif') }
+		li ul.expandable { display: none } 
+	</style>
+	<script type="text/javascript">
+		function setPlusIcon(){
+			var lli = document.getElementsByTagName("li");
+            for(var i = 0; i<lli.length; i++){
+                var li = lli[i];
+                var allUl = li.getElementsByTagName("ul");
+                if(allUl.length > 0){
+                    if(allUl[0].className == "expandable"){
+                        li.style.listStyleImage = "url('img/plus.gif')";
+                    }
+                }
+            }
+            var allA = document.getElementsByTagName("a");
+            for(var i = 0; i<allA.length; i++) {
+                allA[i].addEventListener("click", aClick, false);
+            }
+		}
+		window.onload = setPlusIcon;
+		
+		function aClick(){
+			var e = e || event;
+            var j = e.target || e.srcElement;
+            var li = j.parentNode;
+            var k = li.getElementsByTagName("ul");
+            if(k.length == 0){
+                return true;
+            }
+            if(k[0].style.display == "block"){
+                k[0].style.display = "";
+                li.style.listStyleImage = "url('img/plus.gif')";
+            }
+			else{
+                k[0].style.display = "block";
+                li.style.listStyleImage = "url('img/minus.gif')";
+            }
+            try{
+                e.preventDefault();
+            }
+			catch(x){
+                e.returnValue = false;
+            }
+		}	
+	</script>
+</head>
+
+<body>
+	<h1>Пример раскрывающегося списка</h1>
+	<ul class="expandable">
+		<li>
+			<a href="#">Книги</a>
+			<ul class="expandable">
+				<li>
+					<a href="#">Отечественные</a>
+					<ul class="expandable">
+						<li><a href="#">Детективы</a></li>
+						<li><a href="#">Научная фантастика</a></li>
+						<li><a href="#">Исторические</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">Зарубежные</a>
+					<ul class="expandable">
+						<li><a href="#">Детективы</a></li>
+						<li><a href="#">Научная фантастика</a></li>
+						<li><a href="#">Исторические</a></li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+ 		<li>
+			<a href="#">DVD</a>
+			<ul class="expandable">
+				<li>
+					<a href="#">Отечественные</a>
+					<ul class="expandable">
+						<li><a href="#">Детективы</a></li>
+						<li><a href="#">Научная фантастика</a></li>
+						<li><a href="#">Исторические</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">Зарубежные</a>
+					<ul class="expandable">
+						<li><a href="#">Детективы</a></li>
+						<li><a href="#">Научная фантастика</a></li>
+						<li><a href="#">Исторические</a></li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+	</ul>
+</body>
+</html>

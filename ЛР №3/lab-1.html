@@ -1,0 +1,60 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Открытие новых окон и запись содержания</title>
+<style type="text/css">
+html{background:#fff;font:16px calibri, sans-serif;cursor:default;}
+p{float:left;margin:0 8px 0 0;padding:20px;}
+.p1{background:#ccf;}
+.p2{background:#fcc;}
+.p3{background:#cfc;}
+</style>
+<script type="text/javascript">
+name = 'Это я его открыло!';
+var win; /* НОВОЕ ОКНО! */
+
+function winOpen() {
+	var width = 300;
+	var height = 200;
+	var left = (screen.availWidth + width) / 4;
+	var top = (screen.availHeight + height) / 4;
+	var p = "width = " + width + ", height = " + height + ", top = " + top + ", left = " + left;
+	win = window.open("", "win.focus()", p);
+}
+
+function docWrite() {
+	var text = "";
+    text += "<html>";
+		text += "<head>";
+			text += "<title>NewWin</title>";
+		text += "<script>";
+			text += "alert(opener.name)";
+		text += "<\/script>";
+		text += "</head>";
+		text += "<body>";
+			text += "<p>Текст параграфа</p>";
+		text += "</body>";
+	text += "</html>";
+
+    win.document.open();
+    win.document.write(text);
+    win.document.close();
+}
+
+function winClose() {
+	if (win && !win.close()){
+        win.close();
+	}
+	else{
+		alert("Окно не найдено");
+	}
+}
+</script>
+</head>
+<body>
+<p class="p1"><a href="javascript:winOpen();">Открыть окно</a></p>
+<p class="p3"><a href="javascript:docWrite();">Заполнить окно</a></p>
+<p class="p2"><a href="javascript:winClose();">Закрыть окно</a></p>
+</body>
+</html>

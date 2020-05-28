@@ -1,0 +1,55 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Генерация элементов списка</title>
+<link rel="stylesheet" type="text/css" href="css/form.css">
+<script type="text/javascript">
+	function addYear(flag){
+		var year = document.forms[0].year;
+            if(flag){
+                val = year.options[year.length - 1].value * 1 + 1;
+                o = new Option(val, val, false, true);
+                try{
+                    year.add(o, null);
+                }
+				catch(e){
+                    year.add(o);
+                }
+            }
+			else{
+                val = year.options[0].value * 1 - 1;
+                o = new Option(val, val, false, true);
+                try{
+                    year.add(o, year.options[0]);
+                }
+				catch(e){
+                    year.add(o, 0);
+                }
+            }
+	}
+</script>
+</head>
+<body>
+<form action="">
+	<fieldset>
+		<legend>Изменение элементов списка</legend>
+		<div class="block">
+			<label for="year"><span>Год рождения</span></label>
+			<div class="group">
+				<a href="javascript:addYear(0);">+</a>
+				<select name="year" id="year">
+					<option value="1970">1970</option>
+					<option value="1971">1971</option>
+					<option value="1972">1972</option>
+					<option value="1973">1973</option>
+					<option value="1974">1974</option>
+					<option value="1975">1975</option>
+				</select>
+				<a href="javascript:addYear(1);">+</a>
+			</div>
+		</div>
+	</fieldset>
+</form>
+</body>
+</html>
