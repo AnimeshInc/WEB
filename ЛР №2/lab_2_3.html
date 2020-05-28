@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Лабораторная работа №2</title>
+</head>
+<body>
+
+<script>
+    
+    function ucfirst() {
+    var s1 = 'Дана строка. Сделайте заглавным первый символ каждого слова этой строки. Для этого сделайте вспомогательную функцию ucfirst, которая будет получать строку, делать первый символ этой строки заглавным и возвращать обратно строку с заглавной первой буквой. ';
+    var s2 = s1.split(' ');
+    var s3 = '';
+    for (var i = 0; i < s2.length; i++) {
+    var toZagl = s2[i].substring(0, 1).toUpperCase();
+    var others = s2[i].substring(1, s2[i].length);
+    s3 += toZagl + others + ' ';
+    }
+    console.log(s3)
+    }
+    ucfirst()
+</script>
+</body>
+</html>

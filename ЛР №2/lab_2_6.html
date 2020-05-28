@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Лабораторная работа №2</title>
+</head>
+<body>
+
+<script>
+var s = 'Мы знаем, что монохромный цвет - это градации серого'; 
+var txt = 'хром'; 
+var arr = s.split(' '); 
+var r = new RegExp(txt,"g");
+for (var word of arr){
+    if (word.match(r)){
+        console.log(word);
+    }
+}
+</script>
+</body>
+</html>

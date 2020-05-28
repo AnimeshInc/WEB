@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Лабораторная работа №2</title>
+</head>
+<body>
+
+<script>
+function Book (title, pubYear, price){ 
+this.title = title; 
+this.pubYear = pubYear; 
+this.price = price; 
+Book.prototype.show = function(){ 
+    console.log("Название книги: " + this.title)
+    console.log("Цена книги: " + this.price)
+    }
+}
+var Book1 = new Book ('В сердце леса', 1680, '$200'); 
+Book1.show();
+</script>
+</body>
+</html>
