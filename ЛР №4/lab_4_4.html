@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>ES6</title>
+<script type="text/javascript">
+function getNum() { 
+return new Promise((num) => { 
+setTimeout(() => { 
+num(getRandomInt(1, 5)); 
+}, 3000); 
+}); 
+} 
+async function asyn() { 
+let num = await getNum(); 
+document.write("Число: " + num + "<br \/>")
+document.write("Квадрат числа: " + Math.pow(num, 2)); 
+} 
+asyn(); 
+function getRandomInt(min, max) { 
+return Math.floor(Math.random() * (max - min + 1) + min); 
+}
+</script>
+</head>
+<body>
+</body>
+</html>

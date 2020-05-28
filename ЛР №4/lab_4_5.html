@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>ES6</title>
+<script type="text/javascript">
+class User {
+constructor(name, surname) {
+this.name = name;
+this.surname = surname;
+}
+}
+class Student extends User {
+constructor(name, surname, year) {
+super(name, surname);
+this.year = year;
+}
+getFullName() {
+return this.name + ' ' + this.surname;
+}
+getCourse(){
+var bl;
+var year = (new Date()).getFullYear();
+return year - this.year;
+}
+}
+var student = new Student('Иван', 'Иванов', 2017);
+console.log("Имя: " + student.name);
+console.log("Фамилия: " + student.surname);
+console.log("ФИ: " + student.getFullName());
+console.log("Год вступления: " + student.year);
+console.log("Курс: " + student.getCourse());
+if (student.getCourse() > 5){
+    console.log("Студент уже выпущен")
+}
+if (student.getCourse() < 1){
+    console.log("Неверный год")
+}
+</script>
+</head>
+<body>
+</body>
+</html>

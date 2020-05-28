@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>ES6</title>
+<script type="text/javascript">
+var num;
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+num = getRandomInt(1, 10);
+let promise = new Promise((j, k) => {
+setTimeout(() => { 
+if (num > 5) {
+j('Acc');
+}
+if (num < 6){
+k('Err');
+}}, 2000);
+});
+promise.then(
+Acc => console.log('num = ' + num),
+Err => console.log('Error')
+);
+</script>
+</head>
+<body>
+</body>
+</html>

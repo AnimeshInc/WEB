@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>ES6</title>
+<script type="text/javascript">
+var min = 1; 
+var max = 5; 
+var arr = [ 
+new Promise((num)=>{ 
+let delay = getRandomInt(min, max); 
+setTimeout(()=>{ 
+num(delay); 
+}, delay * 1000); 
+}), 
+new Promise((num)=>{ 
+let delay = getRandomInt(min, max); 
+setTimeout(()=>{ 
+num(delay); 
+}, delay * 1000); 
+}), 
+new Promise((num)=>{ 
+let delay = getRandomInt(min, max); 
+setTimeout(()=>{ 
+num(delay); 
+}, delay * 1000); 
+}) 
+]; 
+Promise.all(arr).then( 
+num => document.write("Массив: " + num + "<br \/> Сумма: ")
+); 
+Promise.all(arr).then(
+result => document.write(result[0] + result[1] + result[2]));
+function getRandomInt(min, max) { 
+return Math.floor(Math.random() * (max - min + 1)) + min; 
+}
+</script>
+</head>
+<body>
+</body>
+</html>
