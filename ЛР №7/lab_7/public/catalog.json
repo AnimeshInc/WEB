@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "image": "https://i.pinimg.com/736x/f4/18/91/f41891d77dab8aa8a0ac60199ef1eaa5--outdoor-pots-outdoor-fountains.jpg",
+        "name": "Фонтан",
+        "price": 300000
+    },
+    {
+        "id": 2,
+        "image": "https://avatars.mds.yandex.net/get-pdb/1649119/d34fc0e9-5870-46d2-9552-b3fe2d458771/s1200?webp=false",
+        "name": "Наушники",
+        "price": 25000
+    },
+    {
+        "id": 3,
+        "image": "https://8toy.ru/pictures/product/middle/5528_middle.jpg",
+        "name": "Плюшевый единорог",
+        "price": 12000
+    },
+    {
+        "id": 4,
+        "image": "https://www.ecomax.pl/public/system/images/articles/442/29-mini-1.jpg",
+        "name": "Робот пылесос",
+        "price": 8000
+    }
+]
